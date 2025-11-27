@@ -3,10 +3,13 @@
   "builds": [
     {
       "src": "nextjs-cuentadante/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "rootDirectory": "nextjs-cuentadante"
-      }
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "nextjs-cuentadante/$1"
     }
   ]
 }
