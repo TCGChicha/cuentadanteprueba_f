@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd nextjs-cuentadante && npm install && npm run build",
+  "outputDirectory": "nextjs-cuentadante/.next",
+  "framework": "nextjs",
+  "installCommand": "cd nextjs-cuentadante && npm install"
+}
