@@ -7,8 +7,8 @@
 -- =============================================================================
 -- LIMPIEZA INICIAL
 -- =============================================================================
+DROP TABLE IF EXISTS asset_movements CASCADE;
 DROP TABLE IF EXISTS requests CASCADE;
-DROP TABLE IF EXISTS assignments CASCADE;
 DROP TABLE IF EXISTS assets CASCADE;
 DROP TABLE IF EXISTS users CASCADE;
 
