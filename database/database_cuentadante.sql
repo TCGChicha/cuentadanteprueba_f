@@ -128,14 +128,14 @@ ON CONFLICT (serial_number) DO NOTHING;
 -- =============================================================================
 -- 8. DATOS DE EJEMPLO - SOLICITUDES
 -- =============================================================================
-INSERT INTO requests (applicant_name, applicant_position, asset_id, reason, priority, status, expected_return_date) VALUES
-('Juan Pérez', 'Instructor de Programación', 1, 'Curso intensivo de desarrollo web para 20 estudiantes del programa de Análisis y Desarrollo de Software', 'Alta', 'Pendiente', CURRENT_DATE + INTERVAL '14 days'),
-('María Gómez', 'Coordinadora Académica', 5, 'Presentación de logros del programa ante autoridades del SENA regional', 'Importante', 'Pendiente', CURRENT_DATE + INTERVAL '7 days'),
-('Carlos López', 'Instructor de Diseño Gráfico', 8, 'Sesión de proyección de portafolios estudiantiles para evaluación final', 'Media', 'Aprobado', CURRENT_DATE + INTERVAL '5 days', 'María González', CURRENT_TIMESTAMP),
-('Ana Martínez', 'Directora Académica', 10, 'Reunión estratégica con aliados institucionales y empresas del sector', 'Importante', 'Pendiente', CURRENT_DATE + INTERVAL '3 days'),
+INSERT INTO requests (applicant_name, applicant_position, asset_id, reason, priority, status, expected_return_date, approved_by, approval_date, rejection_reason, rejected_by, rejection_date) VALUES
+('Juan Pérez', 'Instructor de Programación', 1, 'Curso intensivo de desarrollo web para 20 estudiantes del programa de Análisis y Desarrollo de Software', 'Alta', 'Pendiente', CURRENT_DATE + INTERVAL '14 days', NULL, NULL, NULL, NULL, NULL),
+('María Gómez', 'Coordinadora Académica', 5, 'Presentación de logros del programa ante autoridades del SENA regional', 'Importante', 'Pendiente', CURRENT_DATE + INTERVAL '7 days', NULL, NULL, NULL, NULL, NULL),
+('Carlos López', 'Instructor de Diseño Gráfico', 8, 'Sesión de proyección de portafolios estudiantiles para evaluación final', 'Media', 'Aprobado', CURRENT_DATE + INTERVAL '5 days', 'María González', CURRENT_TIMESTAMP, NULL, NULL, NULL),
+('Ana Martínez', 'Directora Académica', 10, 'Reunión estratégica con aliados institucionales y empresas del sector', 'Importante', 'Pendiente', CURRENT_DATE + INTERVAL '3 days', NULL, NULL, NULL, NULL, NULL),
 ('Luis Rodríguez', 'Técnico de Soporte', 4, 'Pruebas de compatibilidad con software educativo especializado', 'Media', 'Rechazado', CURRENT_DATE + INTERVAL '10 days', NULL, NULL, 'Equipo no compatible con software requerido', 'María González', CURRENT_TIMESTAMP),
-('Patricia Silva', 'Instructora de Multimedia', 12, 'Grabación de material audiovisual para curso virtual', 'Media', 'Aprobado', CURRENT_DATE + INTERVAL '8 days', 'Carlos Rodríguez', CURRENT_TIMESTAMP),
-('Roberto Díaz', 'Instructor de Redes', 7, 'Configuración de estación de trabajo para laboratorio de redes', 'Leve', 'Pendiente', CURRENT_DATE + INTERVAL '12 days');
+('Patricia Silva', 'Instructora de Multimedia', 12, 'Grabación de material audiovisual para curso virtual', 'Media', 'Aprobado', CURRENT_DATE + INTERVAL '8 days', 'Carlos Rodríguez', CURRENT_TIMESTAMP, NULL, NULL, NULL),
+('Roberto Díaz', 'Instructor de Redes', 7, 'Configuración de estación de trabajo para laboratorio de redes', 'Leve', 'Pendiente', CURRENT_DATE + INTERVAL '12 days', NULL, NULL, NULL, NULL, NULL);
 
 -- =============================================================================
 -- 9. DATOS DE EJEMPLO - MOVIMIENTOS
