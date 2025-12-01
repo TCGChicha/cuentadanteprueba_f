@@ -19,6 +19,7 @@ CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL DEFAULT 'cuentadante_1',
     role VARCHAR(50) NOT NULL DEFAULT 'Cuentadante',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -101,10 +102,11 @@ CREATE INDEX idx_movements_date ON asset_movements(movement_date);
 -- =============================================================================
 -- 6. DATOS DE EJEMPLO - USUARIOS (Solo Cuentadantes)
 -- =============================================================================
-INSERT INTO users (name, email, role) VALUES 
-('María González', 'maria.gonzalez@sena.edu.co', 'Cuentadante'),
-('Carlos Rodríguez', 'carlos.rodriguez@sena.edu.co', 'Cuentadante'),
-('Ana Martínez', 'ana.martinez@sena.edu.co', 'Cuentadante')
+INSERT INTO users (name, email, password, role) VALUES 
+('Cuentadante Demo', 'cuentadante@sistema.edu.co', 'cuentadante_1', 'Cuentadante'),
+('María González', 'maria.gonzalez@sena.edu.co', 'cuentadante_1', 'Cuentadante'),
+('Carlos Rodríguez', 'carlos.rodriguez@sena.edu.co', 'cuentadante_1', 'Cuentadante'),
+('Ana Martínez', 'ana.martinez@sena.edu.co', 'cuentadante_1', 'Cuentadante')
 ON CONFLICT (email) DO NOTHING;
 
 -- =============================================================================
